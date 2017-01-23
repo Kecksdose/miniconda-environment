@@ -8,9 +8,10 @@ services:
   - docker
 
 before_install:
-  - printenv
+  - pwd
+  - ls -lah
   - docker pull centos:latest
-  - docker run -ti --name=centos_container centos:latest bash
+  - docker run -v ${PWD}:/miniconda-environment/ --name=cent -dt centos:latest
 
 script:
- - echo "Hello container"
+ - docker exec cent /bin/sh -c "cat /miniconda-environment/README.md"
