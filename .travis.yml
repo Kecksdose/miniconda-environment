@@ -10,3 +10,4 @@ before_install:
 
 script:
   - yum update
+  - yum install -y wget bzip2
