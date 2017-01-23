@@ -10,7 +10,7 @@ services:
 before_install:
   - printenv
   - docker pull centos:latest
-  - docker run -d centos:latest --name centos_container /bin/bash -c "sleep 100000"
+  - docker run -d centos:latest centos_container /bin/bash -c "sleep 100000" --name=centos_container
   - docker exec -it centos_container /bin/bash
 
 script:
