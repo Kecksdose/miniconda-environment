@@ -1,0 +1,18 @@
+name: py2root6
+channels:
+    - conda-forge
+    - nlesc
+dependencies:
+    - python=2
+    - root=6
+    - root-numpy
+    - root_pandas
+    - numpy
+    - matplotlib=2.*
+    - pandas
+    - scikit-learn
+    - theano
+    - tensorflow
+    - lasagne
+    - jupyter
+    - pip

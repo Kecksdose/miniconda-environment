@@ -1,0 +1,14 @@
+name: ml
+channels:
+    - conda-forge
+dependencies:
+    - python=3
+    - numpy
+    - matplotlib
+    - pandas
+    - scikit-learn
+    - theano
+    - tensorflow
+    - lasagne
+    - jupyter
+    - pip
