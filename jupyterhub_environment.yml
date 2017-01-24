@@ -1,0 +1,15 @@
+name: jupyterhub
+channels:
+  - conda-forge
+dependencies:
+  - python=3
+  - numpy
+  - pandas
+  - matplotlib
+  - jupyterhub
+  - notebook >= 4.2
+  - ipykernel >= 4.3
+  - pip:
+    - oauthenticator
+    - dockerspawner
+    - netifaces
