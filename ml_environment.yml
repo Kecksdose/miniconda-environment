@@ -6,9 +6,12 @@ dependencies:
     - numpy
     - matplotlib
     - pandas
-    - scikit-learn
+    - scikit-learn=0.18.1
     - theano
     - tensorflow
     - lasagne
+    - keras
     - jupyter
-    - pip
+    - pip:
+      - xgboost
+      - hep_ml
