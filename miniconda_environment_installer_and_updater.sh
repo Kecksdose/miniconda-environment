@@ -11,6 +11,12 @@ ROOT_PACKAGES_NEEDED=(gcc-gfortran openssl-devel pcre-devel \
 
 MINICONDA_VERSION=Miniconda3-3.7.0-Linux-x86_64.sh
 
+# For travis
+if [ ${TRAVIS} ]
+then
+    REPO_DIR=/miniconda-environment/
+fi
+
 # For time measurement
 START=`date +%s`
 
@@ -47,7 +53,7 @@ conda update --yes conda
 # Build environments
 for env in ${REPO_DIR}*_environment.yml
 do
-    TMP_ENV_NAME=$(sed 's/\(.*\)_.*/\1/g' <<< ${env})
+    TMP_ENV_NAME=$(sed 's/_environment.yml//g' <<< ${env})
     TMP_ENV_NAME=$(basename ${TMP_ENV_NAME})    
     if [ ! -d "${INSTALL_DIR}/miniconda/envs/${TMP_ENV_NAME}" ]    
     then
