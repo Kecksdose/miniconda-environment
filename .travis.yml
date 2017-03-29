@@ -17,4 +17,4 @@ env:
   - TRAVIS=true
 
 script:
- - docker exec cent /bin/sh -c "source /miniconda-environment/miniconda_environment_installer_and_updater.sh"
+ - docker exec cent /bin/sh -c "export TRAVIS=true; source /miniconda-environment/miniconda_environment_installer_and_updater.sh"
