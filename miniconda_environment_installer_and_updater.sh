@@ -12,9 +12,12 @@ ROOT_PACKAGES_NEEDED=(gcc-gfortran openssl-devel pcre-devel \
 MINICONDA_VERSION=Miniconda3-3.7.0-Linux-x86_64.sh
 
 # For travis
-if [ ${TRAVIS} ]
+if [ ${TRAVIS} == true ]
 then
+    echo "Travis environment detected."
     REPO_DIR=/home/travis/build/Kecksdose/miniconda-environment/
+else
+    echo "Normal environment."
 fi
 
 # Print some paths (for debugging)

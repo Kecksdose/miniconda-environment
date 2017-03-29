@@ -13,5 +13,8 @@ before_install:
   - docker pull centos:latest
   - docker run -v ${PWD}:/miniconda-environment/ --name=cent -dt centos:latest
 
+env:
+  - TRAVIS=true
+
 script:
  - docker exec cent /bin/sh -c "source /miniconda-environment/miniconda_environment_installer_and_updater.sh"
