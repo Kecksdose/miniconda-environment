@@ -14,8 +14,12 @@ MINICONDA_VERSION=Miniconda3-3.7.0-Linux-x86_64.sh
 # For travis
 if [ ${TRAVIS} ]
 then
-    REPO_DIR=/miniconda-environment/
+    REPO_DIR=/home/travis/build/Kecksdose/miniconda-environment/
 fi
+
+# Print some paths (for debugging)
+echo "Repository directory is: ${REPO_DIR}"
+echo "Will be installed to: ${INSTALL_DIR}"
 
 # For time measurement
 START=`date +%s`
@@ -48,7 +52,7 @@ fi
 export PATH="${INSTALL_DIR}/miniconda/bin:${PATH}"
 
 # Update conda
-conda update --yes conda
+conda update --yes -q conda
 
 # Build environments
 for env in ${REPO_DIR}*_environment.yml
